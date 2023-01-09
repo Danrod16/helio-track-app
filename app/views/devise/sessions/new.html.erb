@@ -1,20 +1,33 @@
-<h2>Log in</h2>
+<div class="helio-container">
+  <div class="sign-in-banner">
+    <div class="sign-in-banner-body">
+    <h1>Welcome to Helio Tracker 👋</h1>
+    <p>Easily track the status of your pojects, comment and get in touch at every step of the project.</p>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    label: false,
+                    autofocus: true,
+                    placeholder: "Email",
+                    input_html: { autocomplete: "email" } %>
+        <%= f.input :password,
+                    required: false,
+                    label: false,
+                    placeholder: "*******",
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div class="form-actions">
+        <%= f.button :submit, "Log in", class: "button-primary" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+    </div>
+    <div>
+      <%= image_tag "maria.png", alt: "text" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

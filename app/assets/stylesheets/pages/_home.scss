@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.sign-in-banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    align-items: center;
+}
+
+.sign-in-banner-body {
+    max-width: 450px;
+}

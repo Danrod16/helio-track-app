@@ -1,0 +1,36 @@
+.helio-container {
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+h1,h2,h3,p {
+    color: $text-color;
+}
+
+a {
+    color: $primary-green !important;
+    font-weight: bolder;
+    text-decoration: none !important;
+}
+
+h1 {
+    font-size: 76px;
+    margin: 20px 0px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body {
+    background-color: white !important;
+}
