@@ -1,0 +1,9 @@
+<div class="helio-container">
+    <h1> Edit <%= @project.name %></h1>
+    <%= simple_form_for @project do |f| %>
+        <%= f.input :name, placeholder: "Name", label: false %>
+        <%= f.input :description, placeholder: "Description", label: false %>
+        <%= f.association :users, collection: User.where(role: "client").order(:email),label_method: :email, as: :check_boxes, prompt: "Choose a client", label: false %>
+        <%= f.button :submit, "Create project", class: "button-primary", label: false %>
+    <% end %>
+</div>

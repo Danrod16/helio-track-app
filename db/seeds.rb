@@ -17,7 +17,7 @@ puts "Creating data"
 lto = Company.create!(name: "SEQC")
 helio = Company.create!(name: "Helio digital studio")
 designer = User.create!(email: 'designer@gmail.com', password: 'password', role: 'member', company: helio)
-admin = User.create!(email: 'admin@gmail.com', password: 'password', role: 'password', company: helio)
+admin = User.create!(email: 'admin@gmail.com', password: 'password', role: 'admin', company: helio)
 client = User.create!(email: 'client@gmail.com', password: 'password', role: 'client', company: lto)
 
 website_project = Project.create!(name: 'Website redesign for labtestsonline.es', description: 'Website redesign for Lab tests online consisting of branding, logo design and SEO')

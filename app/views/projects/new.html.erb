@@ -1,0 +1,20 @@
+<div class="helio-container">
+    <h1> Create a new Project</h1>
+    <%= simple_form_for @project do |f| %>
+            <%= f.input :name, placeholder: "Name", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.association :users, collection: User.where(role: "client").order(:email),label_method: :email, as: :check_boxes, prompt: "Choose a client", label: false %>
+            <div class="form-inputs", data-controller="milestones">
+                <%=   f.simple_fields_for :milestones do |milestone| %>
+                        <%= milestone.input :name %>
+                        <%= milestone.input :description %>
+                        <%= milestone.select :status, collection: Milestone::STATUS %>
+                        <%= link_to "➕ Add more", "#", data: { action: "click->milestones#newForm" } %>
+                <% end %>
+                <div data-milestones-target="source">
+                    hello world
+                </div>
+            </div>
+            <%= f.button :submit, "Create project", class: "button-primary", label: false %>
+    <% end %>
+</div>

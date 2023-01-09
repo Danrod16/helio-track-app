@@ -5,7 +5,7 @@ class CreateMilestones < ActiveRecord::Migration[7.0]
       t.references :project, null: false, foreign_key: true
       t.string :name
       t.text :description
-      t.string :status, default: 'pending'
+      t.string :status, default: 'Pending'
 
       t.timestamps
     end
